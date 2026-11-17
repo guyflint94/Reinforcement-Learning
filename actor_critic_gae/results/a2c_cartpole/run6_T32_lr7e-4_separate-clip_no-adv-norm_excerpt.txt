@@ -1,0 +1,23 @@
+# normalise_advantages = False, otherwise as run 5. Excerpt: iterations 200-1300 were not kept.
+Episodes: 100, mean return: 23.5
+Random policy: 100 episodes, mean return: 23.51
+iter    50 | steps   12800 | policy   5.2168 | value    75.219 | entropy 0.688 | return(last 20)    34.6
+iter   100 | steps   25600 | policy   5.1472 | value    78.303 | entropy 0.673 | return(last 20)    32.0
+iter   150 | steps   38400 | policy   5.4177 | value    90.436 | entropy 0.668 | return(last 20)    56.3
+iter  1350 | steps  345600 | policy  -2.8537 | value   446.116 | entropy 0.599 | return(last 20)   140.8
+iter  1400 | steps  358400 | policy   0.9740 | value    96.755 | entropy 0.542 | return(last 20)   170.6
+iter  1450 | steps  371200 | policy   1.7772 | value    11.949 | entropy 0.600 | return(last 20)   298.4
+iter  1500 | steps  384000 | policy   0.8431 | value     4.158 | entropy 0.576 | return(last 20)   452.8
+iter  1550 | steps  396800 | policy   0.2018 | value     0.545 | entropy 0.604 | return(last 20)   331.3
+iter  1600 | steps  409600 | policy  -4.4643 | value   346.101 | entropy 0.575 | return(last 20)   216.1
+iter  1650 | steps  422400 | policy  -0.1382 | value    15.139 | entropy 0.597 | return(last 20)   232.8
+iter  1700 | steps  435200 | policy  -0.9700 | value    73.086 | entropy 0.594 | return(last 20)   210.9
+iter  1750 | steps  448000 | policy   0.4985 | value     1.304 | entropy 0.587 | return(last 20)   343.6
+iter  1800 | steps  460800 | policy  -2.2983 | value   434.167 | entropy 0.578 | return(last 20)   358.4
+iter  1850 | steps  473600 | policy  -4.1128 | value   482.791 | entropy 0.588 | return(last 20)   350.4
+iter  1900 | steps  486400 | policy   0.0181 | value     0.242 | entropy 0.598 | return(last 20)   449.9
+iter  1950 | steps  499200 | policy  -0.0814 | value   152.915 | entropy 0.582 | return(last 20)   279.8
+
+Training episodes recorded: 3847
+Mean return of first 20 episodes: 22.25
+Mean return of last 20 episodes: 279.15

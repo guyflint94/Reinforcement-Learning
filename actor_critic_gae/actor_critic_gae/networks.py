@@ -1,4 +1,3 @@
-# networks.py
 import torch
 from torch import nn
 
@@ -11,13 +10,17 @@ class ActorNet(nn.Module):
     """
     def __init__(self, obs_dim: int, n_actions: int, hidden_size: int) -> None:
         super().__init__()
-        layers = []
-        layers += [nn.Linear(obs_dim, hidden_size)]
-        layers += [nn.ReLU()]
-        layers += [nn.Linear(hidden_size, hidden_size)]
-        layers += [nn.ReLU()]
-        layers += [nn.Linear(hidden_size, n_actions)]
-        layers += [nn.Identity()]
+
+        layers = [
+            nn.Linear(obs_dim, hidden_size),
+            nn.ReLU(),
+
+            nn.Linear(hidden_size, hidden_size),
+            nn.ReLU(),
+
+            nn.Linear(hidden_size, n_actions),
+            nn.Identity()
+            ]
         self.a_net = nn.Sequential(*layers)
 
     def forward(self, obs: torch.Tensor) -> torch.Tensor:
@@ -34,12 +37,15 @@ class CriticNet(nn.Module):
     def __init__(self, obs_dim: int, hidden_size: int) -> None:
         """Two hidden layers of hidden_size units each."""
         super().__init__()
-        layers = []
-        layers += [nn.Linear(obs_dim, hidden_size)]
-        layers += [nn.ReLU()]
-        layers += [nn.Linear(hidden_size, hidden_size)]
-        layers += [nn.ReLU()]
-        layers += [nn.Linear(hidden_size, 1)]
+        layers = [
+           nn.Linear(obs_dim, hidden_size),
+           nn.ReLU(),
+
+           nn.Linear(hidden_size, hidden_size),
+           nn.ReLU(),
+
+          nn.Linear(hidden_size, 1)
+          ]
         self.c_net = nn.Sequential(*layers)
 
     def forward(self, obs: torch.Tensor) -> torch.Tensor:

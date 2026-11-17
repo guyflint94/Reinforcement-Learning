@@ -5,15 +5,21 @@ from dataclasses import dataclass
 @dataclass
 class Config:
     """All hyperparameters for one run. Single source of truth.
-
-    Add a field only when a milestone needs it.
-    M1 needs: env_id, seed, num_episodes, hidden_size, log_path.
-    Choose the defaults yourself.
+       Choose the defaults yourself.
     """
-
     # set up hyperparameters on the form: name: type = default
     env_id: str = "CartPole-v1"
     seed: int = 3
     num_episodes: int = 100
     hidden_size: int = 32
     log_path: str = 'logs/logs.csv'
+    num_envs: int = 8
+    rollout_steps: int = 32
+    learning_rate: float = 0.0007
+    gamma: float = 0.99
+    lam: float = 0.95
+    value_coef: float = 0.5
+    entropy_coef: float = 0.01
+    max_grad_norm: float = 0.5
+    normalise_advantages: bool = True
+    total_steps: int = 500000
