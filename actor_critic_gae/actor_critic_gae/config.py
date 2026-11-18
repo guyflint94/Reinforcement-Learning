@@ -23,3 +23,7 @@ class Config:
     max_grad_norm: float = 0.5
     normalise_advantages: bool = True
     total_steps: int = 500000
+    algo: str = "a2c"
+    clip_eps: float = 0.2
+    num_epochs: int = 4
+    minibatch_size: int = 4

@@ -11,6 +11,7 @@ Synchronous advantage actor-critic (A2C) with Generalised Advantage Estimation, 
 - **Advantage estimators** (`advantages.py`): bootstrapped discounted returns, TD(0) advantages and GAE(λ).
 - **A2C update** (`update.py`): policy-gradient loss with GAE advantages (optionally normalised per batch), squared-error value loss against the λ-return, an entropy bonus, gradient-norm clipping applied separately to actor and critic, and Adam over both networks.
 - **Training loop** (`train.py`): collect, update, log the return of every finished episode against environment steps, and print losses, entropy and the mean of the last 20 returns every 50 updates.
+- **PPO update** (`ppo_update.py`): clipped-ratio surrogate, several epochs over each rollout with shuffled minibatches, same value loss, entropy bonus and per-network gradient clipping as A2C, plus `approx_kl` and `clip_fraction` diagnostics. Written and checked (the ratio is 1 to within 1.2e-7 on the first minibatch), but **not yet wired into `train.py` and not yet run**, so there are no PPO results.
 - **Networks** (`networks.py`): separate actor (logits) and critic (value) MLPs with two hidden layers, no shared parameters.
 
 ## Checks
@@ -59,6 +60,6 @@ Two things are not tried yet: a learning rate that decays over training, and a g
 
 ## Not done yet
 
-- PPO (clipped ratio, several epochs, minibatches) on the same code, compared with A2C.
+- Wiring PPO into the training loop (`algo` option), running it, and comparing it with A2C.
 - Plots of the learning curves.
 - A λ sweep over {0, 0.5, 0.9, 0.95, 1.0} with 5 seeds, the truncation-as-termination ablation, and Acrobot-v1.
