@@ -8,7 +8,7 @@ import argparse
 from actor_critic_gae.config import Config
 from actor_critic_gae.networks import ActorNet, CriticNet
 from torch.distributions.categorical import Categorical
-
+from actor_critic_gae.ppo_update import ppo_update
 from actor_critic_gae.rollout import make_vec_env, RolloutCollector
 from actor_critic_gae.update import a2c_update
 
@@ -82,6 +82,15 @@ def write_episode_log(rows: list[tuple[int, float, int]], path: str) -> None:
             writer.writerow(r)  # data
 
 
+def save_training_log(rows: list[tuple[int, float]], path: str) -> None:
+    """Write (steps, return) for every finished training episode."""
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(["steps", "return"])
+        writer.writerows(rows)
+
+
 def train(cfg):
     set_seed(seed=cfg.seed)
     envs = make_vec_env(cfg.env_id, cfg.num_envs)
@@ -102,9 +111,16 @@ def train(cfg):
 
         collect_experience = collector.collect()
 
-        stats = a2c_update(actor_net, critic_net, optimizer, collect_experience, cfg.gamma,
-                           cfg.lam, cfg.value_coef, cfg.entropy_coef, cfg.max_grad_norm,
-                           cfg.normalise_advantages)
+        if cfg.algo == "ppo":
+            stats = ppo_update(actor_net, critic_net, optimizer, collect_experience,
+                               cfg.gamma, cfg.lam, cfg.clip_eps, cfg.num_epochs, cfg.minibatch_size,
+                               cfg.value_coef, cfg.entropy_coef, cfg.max_grad_norm, cfg.normalise_advantages)
+        elif cfg.algo == "a2c":
+            stats = a2c_update(actor_net, critic_net, optimizer, collect_experience, cfg.gamma,
+                               cfg.lam, cfg.value_coef, cfg.entropy_coef, cfg.max_grad_norm,
+                               cfg.normalise_advantages)
+        else:
+            raise ValueError(f"Unknown algo: {cfg.algo!r} (use 'a2c' or 'ppo')")
 
         counter += cfg.rollout_steps * cfg.num_envs
         iteration += 1
@@ -112,12 +128,16 @@ def train(cfg):
         for s in collect_experience.episode_returns:
             tracking_lst.append((counter, s))
 
+
         if iteration % 50 == 0:
             recent = [r for _, r in tracking_lst[-20:]]
             mean_recent = sum(recent) / len(recent) if recent else float("nan")
-            print(f"iter {iteration:5d} | steps {counter:7d} | "
-                  f"policy {stats['policy_loss']:8.4f} | value {stats['value_loss']:9.3f} | "
-                  f"entropy {stats['entropy']:.3f} | return(last 20) {mean_recent:7.1f}")
+            line = (f"iter {iteration:5d} | steps {counter:7d} | "
+                    f"policy {stats['policy_loss']:8.4f} | value {stats['value_loss']:9.3f} | "
+                    f"entropy {stats['entropy']:.3f} | return(last 20) {mean_recent:7.1f}")
+            if "approx_kl" in stats:
+                line += f" | approx_kl {stats['approx_kl']:.4f} | clip_fraction {stats['clip_fraction']:.3f}"
+            print(line)
 
     return tracking_lst
 
@@ -131,26 +151,19 @@ def main() -> None:
     parser.add_argument('--log-path', type=str, default=Config.log_path)
     parser.add_argument('--num-envs', type=int, default=Config.num_envs)
     parser.add_argument('--total-steps', type=int, default=Config.total_steps)
+    parser.add_argument('--algo', type=str, default=Config.algo)
+    parser.add_argument('--lr', type=float, default=Config.learning_rate)
+    parser.add_argument('--out-dir', type=str, default='results/runs')
     args = parser.parse_args()
 
     cfg = Config(env_id=args.env_id, seed=args.seed, num_episodes=args.episodes, log_path=args.log_path, num_envs=args.num_envs,
-                 total_steps=args.total_steps)
+                 total_steps=args.total_steps, algo=args.algo, learning_rate=args.lr)
 
-    # Run an untrained policy to establish a baseline
-    rows = run_random_policy(cfg)
-    write_episode_log(rows, cfg.log_path)
-
-    mean_return = sum(r[1] for r in rows) / len(rows)
-    print(f"Episodes: {len(rows)}, mean return: {mean_return:.1f}")
-
-    if rows:
-        mean_return = sum(r[1] for r in rows) / len(rows)
-        print(f"Random policy: {len(rows)} episodes, mean return: {mean_return:.2f}")
-    else:
-        print("Random policy: no episodes recorded.")
 
     # Train A2C
     training_rows = train(cfg)
+
+    save_training_log(training_rows, f"{args.out_dir}/{args.algo}_seed{args.seed}.csv")
 
     # Each training row is (total_steps, episode_return)
     training_returns = [episode_return for _, episode_return in training_rows]

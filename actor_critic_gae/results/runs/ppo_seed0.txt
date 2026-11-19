@@ -1,0 +1,43 @@
+iter    50 | steps   12800 | policy  -0.0059 | value    80.320 | entropy 0.597 | return(last 20)   126.5 | approx_kl 0.0052 | clip_fraction 0.005
+iter   100 | steps   25600 | policy  -0.0013 | value   187.083 | entropy 0.549 | return(last 20)   181.8 | approx_kl -0.0002 | clip_fraction 0.000
+iter   150 | steps   38400 | policy  -0.0031 | value    23.242 | entropy 0.596 | return(last 20)   141.3 | approx_kl 0.0012 | clip_fraction 0.000
+iter   200 | steps   51200 | policy  -0.0046 | value   161.379 | entropy 0.577 | return(last 20)   148.4 | approx_kl -0.0011 | clip_fraction 0.001
+iter   250 | steps   64000 | policy  -0.0005 | value    32.984 | entropy 0.567 | return(last 20)   246.8 | approx_kl 0.0005 | clip_fraction 0.000
+iter   300 | steps   76800 | policy  -0.0089 | value    13.421 | entropy 0.541 | return(last 20)   236.6 | approx_kl 0.0059 | clip_fraction 0.021
+iter   350 | steps   89600 | policy   0.0003 | value     0.136 | entropy 0.549 | return(last 20)   488.1 | approx_kl -0.0008 | clip_fraction 0.000
+iter   400 | steps  102400 | policy  -0.0123 | value     0.147 | entropy 0.532 | return(last 20)   397.4 | approx_kl 0.0096 | clip_fraction 0.080
+iter   450 | steps  115200 | policy  -0.0040 | value     1.471 | entropy 0.537 | return(last 20)   461.1 | approx_kl 0.0023 | clip_fraction 0.006
+iter   500 | steps  128000 | policy  -0.0140 | value     0.009 | entropy 0.502 | return(last 20)   463.8 | approx_kl 0.0066 | clip_fraction 0.109
+iter   550 | steps  140800 | policy   0.0018 | value     0.177 | entropy 0.507 | return(last 20)   394.6 | approx_kl -0.0021 | clip_fraction 0.000
+iter   600 | steps  153600 | policy  -0.0000 | value     0.002 | entropy 0.480 | return(last 20)   500.0 | approx_kl 0.0014 | clip_fraction 0.000
+iter   650 | steps  166400 | policy  -0.0003 | value     0.002 | entropy 0.478 | return(last 20)   382.4 | approx_kl -0.0002 | clip_fraction 0.000
+iter   700 | steps  179200 | policy  -0.0001 | value     0.002 | entropy 0.469 | return(last 20)   500.0 | approx_kl -0.0000 | clip_fraction 0.000
+iter   750 | steps  192000 | policy  -0.0038 | value     0.000 | entropy 0.465 | return(last 20)   500.0 | approx_kl 0.0111 | clip_fraction 0.071
+iter   800 | steps  204800 | policy  -0.0057 | value     0.000 | entropy 0.492 | return(last 20)   464.7 | approx_kl 0.0094 | clip_fraction 0.065
+iter   850 | steps  217600 | policy  -0.0043 | value     0.287 | entropy 0.480 | return(last 20)   469.6 | approx_kl 0.0061 | clip_fraction 0.021
+iter   900 | steps  230400 | policy  -0.0030 | value     0.002 | entropy 0.439 | return(last 20)   431.1 | approx_kl 0.0085 | clip_fraction 0.071
+iter   950 | steps  243200 | policy  -0.0035 | value     0.000 | entropy 0.469 | return(last 20)   500.0 | approx_kl 0.0033 | clip_fraction 0.016
+iter  1000 | steps  256000 | policy  -0.0056 | value     0.000 | entropy 0.497 | return(last 20)   500.0 | approx_kl -0.0056 | clip_fraction 0.041
+iter  1050 | steps  268800 | policy  -0.0041 | value   314.796 | entropy 0.339 | return(last 20)   488.1 | approx_kl 0.0020 | clip_fraction 0.026
+iter  1100 | steps  281600 | policy  -0.0004 | value     0.000 | entropy 0.469 | return(last 20)   500.0 | approx_kl 0.0016 | clip_fraction 0.001
+iter  1150 | steps  294400 | policy  -0.0022 | value   256.125 | entropy 0.241 | return(last 20)   293.8 | approx_kl -0.0013 | clip_fraction 0.009
+iter  1200 | steps  307200 | policy  -0.0020 | value     0.000 | entropy 0.394 | return(last 20)   500.0 | approx_kl 0.0001 | clip_fraction 0.000
+iter  1250 | steps  320000 | policy  -0.0029 | value     0.000 | entropy 0.350 | return(last 20)   500.0 | approx_kl 0.0008 | clip_fraction 0.041
+iter  1300 | steps  332800 | policy  -0.0038 | value     0.000 | entropy 0.382 | return(last 20)   500.0 | approx_kl -0.0010 | clip_fraction 0.036
+iter  1350 | steps  345600 | policy  -0.0016 | value     0.000 | entropy 0.359 | return(last 20)   500.0 | approx_kl 0.0006 | clip_fraction 0.002
+iter  1400 | steps  358400 | policy  -0.0042 | value     0.000 | entropy 0.340 | return(last 20)   500.0 | approx_kl 0.0111 | clip_fraction 0.050
+iter  1450 | steps  371200 | policy  -0.0006 | value     0.000 | entropy 0.329 | return(last 20)   500.0 | approx_kl -0.0000 | clip_fraction 0.001
+iter  1500 | steps  384000 | policy  -0.0018 | value     0.000 | entropy 0.380 | return(last 20)   500.0 | approx_kl 0.0054 | clip_fraction 0.010
+iter  1550 | steps  396800 | policy  -0.0007 | value   123.761 | entropy 0.190 | return(last 20)   479.1 | approx_kl -0.0018 | clip_fraction 0.009
+iter  1600 | steps  409600 | policy  -0.0011 | value     0.000 | entropy 0.350 | return(last 20)   500.0 | approx_kl 0.0033 | clip_fraction 0.000
+iter  1650 | steps  422400 | policy  -0.0048 | value     0.000 | entropy 0.394 | return(last 20)   500.0 | approx_kl 0.0024 | clip_fraction 0.011
+iter  1700 | steps  435200 | policy   0.0004 | value     0.000 | entropy 0.352 | return(last 20)   500.0 | approx_kl -0.0015 | clip_fraction 0.007
+iter  1750 | steps  448000 | policy  -0.0112 | value     0.000 | entropy 0.347 | return(last 20)   500.0 | approx_kl 0.0137 | clip_fraction 0.089
+iter  1800 | steps  460800 | policy  -0.0013 | value     0.000 | entropy 0.286 | return(last 20)   500.0 | approx_kl -0.0004 | clip_fraction 0.003
+iter  1850 | steps  473600 | policy  -0.0021 | value     0.000 | entropy 0.317 | return(last 20)   500.0 | approx_kl -0.0001 | clip_fraction 0.007
+iter  1900 | steps  486400 | policy  -0.0066 | value     0.000 | entropy 0.252 | return(last 20)   500.0 | approx_kl 0.0096 | clip_fraction 0.062
+iter  1950 | steps  499200 | policy  -0.0045 | value     0.000 | entropy 0.345 | return(last 20)   500.0 | approx_kl 0.0037 | clip_fraction 0.043
+
+Training episodes recorded: 1502
+Mean return of first 20 episodes: 21.40
+Mean return of last 20 episodes: 500.00

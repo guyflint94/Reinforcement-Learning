@@ -1,0 +1,43 @@
+iter    50 | steps   12800 | policy  -0.0236 | value    62.994 | entropy 0.679 | return(last 20)    35.8
+iter   100 | steps   25600 | policy  -0.0170 | value    67.257 | entropy 0.665 | return(last 20)    43.5
+iter   150 | steps   38400 | policy  -0.0164 | value    88.271 | entropy 0.645 | return(last 20)    53.6
+iter   200 | steps   51200 | policy   0.0035 | value    97.012 | entropy 0.635 | return(last 20)    89.8
+iter   250 | steps   64000 | policy   0.0178 | value    93.956 | entropy 0.607 | return(last 20)   130.8
+iter   300 | steps   76800 | policy   0.0021 | value    87.004 | entropy 0.604 | return(last 20)   173.9
+iter   350 | steps   89600 | policy   0.0279 | value    86.149 | entropy 0.590 | return(last 20)   208.2
+iter   400 | steps  102400 | policy   0.0735 | value    89.068 | entropy 0.597 | return(last 20)   256.9
+iter   450 | steps  115200 | policy   0.0242 | value    78.373 | entropy 0.581 | return(last 20)   132.3
+iter   500 | steps  128000 | policy  -0.0327 | value   230.747 | entropy 0.568 | return(last 20)   109.3
+iter   550 | steps  140800 | policy   0.0210 | value    46.559 | entropy 0.575 | return(last 20)   164.4
+iter   600 | steps  153600 | policy  -0.0262 | value   265.144 | entropy 0.537 | return(last 20)    94.8
+iter   650 | steps  166400 | policy  -0.0272 | value   195.711 | entropy 0.579 | return(last 20)    98.2
+iter   700 | steps  179200 | policy  -0.0226 | value   321.740 | entropy 0.537 | return(last 20)   105.3
+iter   750 | steps  192000 | policy  -0.0120 | value    77.235 | entropy 0.547 | return(last 20)    85.8
+iter   800 | steps  204800 | policy   0.0035 | value    53.107 | entropy 0.521 | return(last 20)    96.5
+iter   850 | steps  217600 | policy  -0.0553 | value   126.173 | entropy 0.504 | return(last 20)   109.3
+iter   900 | steps  230400 | policy   0.0048 | value   115.879 | entropy 0.504 | return(last 20)    74.8
+iter   950 | steps  243200 | policy   0.0336 | value     5.715 | entropy 0.497 | return(last 20)    87.9
+iter  1000 | steps  256000 | policy  -0.0366 | value    94.931 | entropy 0.476 | return(last 20)    67.6
+iter  1050 | steps  268800 | policy  -0.0308 | value   108.123 | entropy 0.481 | return(last 20)    88.0
+iter  1100 | steps  281600 | policy  -0.0101 | value   223.411 | entropy 0.471 | return(last 20)    76.0
+iter  1150 | steps  294400 | policy   0.0400 | value     5.071 | entropy 0.483 | return(last 20)    99.6
+iter  1200 | steps  307200 | policy   0.0296 | value     3.134 | entropy 0.480 | return(last 20)    98.8
+iter  1250 | steps  320000 | policy  -0.0316 | value    62.383 | entropy 0.434 | return(last 20)   101.0
+iter  1300 | steps  332800 | policy  -0.0206 | value     2.296 | entropy 0.483 | return(last 20)   102.3
+iter  1350 | steps  345600 | policy   0.0755 | value     0.516 | entropy 0.465 | return(last 20)   101.5
+iter  1400 | steps  358400 | policy   0.0110 | value     4.907 | entropy 0.492 | return(last 20)   118.2
+iter  1450 | steps  371200 | policy   0.0326 | value     1.913 | entropy 0.493 | return(last 20)   119.0
+iter  1500 | steps  384000 | policy  -0.0043 | value     2.731 | entropy 0.505 | return(last 20)   138.0
+iter  1550 | steps  396800 | policy  -0.0032 | value     6.040 | entropy 0.533 | return(last 20)   150.5
+iter  1600 | steps  409600 | policy   0.0660 | value     4.914 | entropy 0.561 | return(last 20)   251.9
+iter  1650 | steps  422400 | policy   0.0183 | value   717.505 | entropy 0.542 | return(last 20)   128.2
+iter  1700 | steps  435200 | policy   0.0113 | value   778.561 | entropy 0.543 | return(last 20)   128.3
+iter  1750 | steps  448000 | policy   0.0270 | value   411.509 | entropy 0.523 | return(last 20)   122.7
+iter  1800 | steps  460800 | policy   0.0066 | value   168.733 | entropy 0.555 | return(last 20)   166.8
+iter  1850 | steps  473600 | policy   0.0189 | value   125.794 | entropy 0.522 | return(last 20)   142.7
+iter  1900 | steps  486400 | policy  -0.0262 | value    83.409 | entropy 0.540 | return(last 20)   138.7
+iter  1950 | steps  499200 | policy   0.0065 | value    22.970 | entropy 0.544 | return(last 20)    89.3
+
+Training episodes recorded: 5180
+Mean return of first 20 episodes: 20.45
+Mean return of last 20 episodes: 108.50
