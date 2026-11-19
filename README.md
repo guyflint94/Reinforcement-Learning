@@ -8,6 +8,6 @@ Exercises from learning reinforcement learning from the ground up, as preparatio
 |---|---|
 | [dynamic_programming/](dynamic_programming/) | Tabular methods on a GridWorld: policy evaluation and greedy policy improvement |
 | [policy_gradient/](policy_gradient/) | REINFORCE on CartPole, with reward-to-go and a baseline |
-| [actor_critic_gae/](actor_critic_gae/) | A2C with GAE from scratch: vectorised rollouts, tested advantage estimators, A2C update (in progress: learns CartPole but does not hold the peak yet; PPO next) |
+| [a2c_gae_ppo/](a2c_gae_ppo/) | A2C with GAE and a PPO update, both from scratch in PyTorch, compared on CartPole over 5 seeds (A2C does not hold its peak, PPO reaches 475 on 5/5 seeds but ends there on 2/5) |
 
 Each folder has its own README with the requirements and how to run its code.
